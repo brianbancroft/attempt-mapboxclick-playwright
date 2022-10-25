@@ -48,6 +48,8 @@ function MapboxMap() {
   return (
     <section className="w-screen h-screen">
       <Map
+        testMode
+        id="map"
         initialViewState={{
           latitude: 40,
           longitude: -100,
