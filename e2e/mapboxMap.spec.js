@@ -27,13 +27,16 @@ test("App has a map", async ({ page }) => {
 test("Map click triggers popup", async ({ page }) => {
   await page.goto("http://localhost:5173/");
 
+  // Fails if map not present
   const map = await page.locator('[aria-label="Map"]');
 
+  // Trigger click at x,y
   await page.mouse.click(100, 100);
 
   await page.mouse.click(200, 200);
   await page.mouse.click(300, 300);
 
+  // If --debug flag active, triggers a pause
   await page.pause();
 
   const popupLabel = "summary data";
